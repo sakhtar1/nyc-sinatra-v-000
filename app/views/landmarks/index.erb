@@ -1,0 +1,8 @@
+<h1> All Landmarks</h1>
+
+<h2> Historical Landmarks:</h2>
+
+<ul><% @landmarks.each do |landmark| %>
+  <li><a href="/landmarks/<%= landmark.id %>"><%= landmark.name %></a>
+  Completed: <%=landmark.year_completed%></li>
+  <%end%></ul>
