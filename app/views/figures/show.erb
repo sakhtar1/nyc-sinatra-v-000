@@ -1,0 +1,20 @@
+<h2>Figure Name</h2>
+<a href="/figures/<%= @figure.id %>"><%= @figure.name %></a>
+<p>Figure Landmarks:
+  <%@figure.landmarks.each do |landmark|%>
+    <ul><%=landmark.name%></ul>
+  <%end%>
+</p>
+<p> Figure Titles:
+        <%@figure.titles.each do |title|%>
+        <ul><%=title.name%></ul>
+        <%end%>
+      </p>
+<br>
+<form method="post" action="/figures/<%=@figure.id%>/delete">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+
+  <input type="submit" value="Delete">
+  <br>
+<p><a href="/figures/new">Make a New Figure</a><p>
+</form>
